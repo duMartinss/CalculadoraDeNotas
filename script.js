@@ -37,7 +37,6 @@ function calcularNota() {
   }
   
   function limparCampos() {
-    document.getElementById('materia').value = '';
     document.getElementById('np1').value = '';
     document.getElementById('np2').value = '';
     document.getElementById('media').value = '';
