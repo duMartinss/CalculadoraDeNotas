@@ -25,7 +25,7 @@ function calcularNota() {
   showConfetti();
     } else {
       const notaExame = 10 - media;
-      exameInput.value = notaExame.toFixed(1);
+      exameInput.value = `Precisa tirar ${notaExame.toFixed(1)} no exame`;
   
       if ((media + notaExame) / 2 >= 5) {
         situacaoInput.value = "⚠ NECESSÁRIO EXAME ⚠";
