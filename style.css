@@ -337,3 +337,16 @@
         font-size: 40px;
     }
 }
+
+@media (max-width: 480px) {
+    .modal-conteudo {
+      padding: 15px 20px;
+      max-height: 80vh; /* reduz para deixar mais espaço */
+      overflow-y: auto; /* adiciona scroll vertical se necessário */
+    }
+  
+    .modal-conteudo button {
+      margin-top: 10px;
+      flex-shrink: 0; /* evita que o botão encolha */
+    }
+  }
