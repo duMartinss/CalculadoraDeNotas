@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora de Notas</title>
+  <link rel="icon" type="image/png" href="calcular.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="titulo">
+          <h1>CALCULADORA DE NOTA</h1>
+        </div>
+      
+        <div class="notas">
+          <div class="inputs">
+            <input type="number" id="np1" placeholder="NP1">
+            <input type="number" id="np2" placeholder="NP2">
+            <input type="text" id="media" placeholder="MÉDIA" disabled>
+            <input type="text" id="exame" placeholder=" NOTA NECESSÁRIA NO EXAME" disabled>
+            <input type="text" id="situacao" placeholder="SITUAÇÃO" disabled>
+          </div>
+      
+          <div class="botoes">
+            <div class="acoes">
+              <button onclick="calcularNota()">CALCULAR</button>
+              <button onclick="limparCampos()">LIMPAR</button>
+            </div>
+          
+          </div>
+
+        
+      
+      </div>
+
+
+      <footer>
+  <span>| Desenvolvido por <strong>Eduardo Martins</strong></span>
+  <span>| Universidade Paulista JK / São José do Rio Preto - SP</span>
+  <span>| <a href="https://github.com/duMartinss" target="_blank">GitHub</a></span>
+  <span>| <a href="mailto:duduestevesmartins@gmail.com">Email</a></span>
+</footer>
+
+<!-- Botão de ajuda -->
+<div class="ajuda">
+    <button id="btnAjuda">?</button>
+  </div>
+  
+  <!-- Modal -->
+  <div id="modalAjuda" class="modal">
+    <div class="modal-conteudo">
+      <h2>🚀 Bem-vindo à Resenha das Notas UNIP!</h2>
+      <p>
+        E aí, meu parça! Aqui é o espaço onde tu descobre se tá <strong>suave na matéria</strong> ou se vai ter que <strong>ralar naquele exame</strong> que ninguém quer fazer.
+      </p>
+      
+      <h3>🎯 Na moral:</h3>
+      <ul>
+        <li>A UNIP quer que tu passe com <strong>média 7</strong>, firmeza?</li>
+        <li>A média é aquela clássica: <strong>(NP1 + NP2) ÷ 2</strong></li>
+        <li>Se tu não colar com 7 ou mais, já sabe… vai ter que <strong>encarar o exame</strong>.</li>
+      </ul>
+  
+      <h3>⚠️ Exame na área!</h3>
+      <p>
+        Pra passar no exame, o esquema é o seguinte:
+      </p>
+      <ul>
+        <li>A média que tu tirou nas provas <strong>somada com a nota do exame</strong> tem que dar pelo menos <strong>10</strong>.</li>
+        <li>Depois divide essa soma por 2.</li>
+        <li>Se der <strong>5 ou mais</strong>, tu tá <strong>no papo</strong>!</li>
+      </ul>
+      <p>
+        Ah, e se faltar só um tiquinho (tipo uns <strong>9.5</strong> na soma total), o prof pode até <strong>dar uma moral</strong> e arredondar.
+      </p>
+  
+      <h3>💥 Exemplo top pra tu sacar:</h3>
+      <ul>
+        <li>Se a média das tuas provas ficou <strong>5.2</strong>, tu vai ter que tirar pelo menos <strong>4.8</strong>:<br> 
+        <strong>(5.2 + 4.8) ÷ 2 = 5</strong> → passou de boa!</li>
+  
+        <li>Ou se tua média deu <strong>6.7</strong>, vai precisar pelo menos <strong>3.3</strong> no exame pra fechar o rolê.</li>
+      </ul>
+  
+      <p>
+        Chega junto, preenche as notas e vê na hora se tu tá <strong>tranquilo</strong> ou vai ter que <strong>estudar um pouco mais</strong>!
+      </p>
+  
+      <p>
+        Ah, e tem a moral de gerar um <strong>PDF</strong> com tudo isso — pra tu <strong>salvar</strong>, mostrar pra mãe, pro brother ou só pra ter na mão.
+      </p>
+  
+      <button id="fecharModal">OK</button>
+    </div>
+  </div>
+      
+  <div id="alertaExame" class="alerta-exame">
+    ⚠️
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,339 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Share Tech", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+
+  }
+  
+  body {
+    background-color: #202A6B; /* azul escuro */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  
+  /* TÍTULO */
+  .titulo {
+    background-color: #202A6B;
+    padding: 30px 500px;
+    text-align: center;
+    border: 2px solid rgb(255, 255, 255);
+    margin-top: 30px; /* fica no topo */
+    
+  }
+  
+  .titulo h1 {
+    color: rgb(255, 255, 255);
+    font-size: 38px;
+  }
+  
+  /* NOTAS */
+  .notas {
+    background-color: #202A6B;
+    padding: 30px 40px;
+    border: 2px solid rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column; /* agora coluna */
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+  
+    width: 70%; 
+    min-height: 200px; 
+  
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  /* Inputs container */
+
+  input {
+    padding: 10px;
+    width: 205px;
+    border: none; /* remove todas as bordas */
+    border: 2px solid rgb(255, 255, 255); /* só borda inferior */
+    background: transparent; /* sem fundo */
+    color: rgb(255, 255, 255); /* texto branco */
+    font-size: 16px;
+    outline: none; /* remove borda azul padrão */
+    transition: border-color 0.3s; /* suaviza a transição */
+  }
+  input:focus {
+    border: 2px solid #000000; /* borda amarela ao focar */
+  }
+  
+  .entradas, .resultados {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  
+  .botoes {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* espaço entre os grupos */
+    justify-content: center;
+    flex-wrap: wrap; /* quebra se não couber */
+  }
+  
+  .botoes button {
+    width: 120px; /* LARGURA FIXA */
+    padding: 10px;
+    border: 2px solid rgb(255, 255, 255);
+    background-color: #202A6B;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 14px;
+  }
+  
+  .botoes button:hover {
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid rgb(0, 0, 0);
+  }
+  
+  /* Linha separadora */
+  .separador {
+    width: 2px;
+    height: 30px;
+    background-color: #ccc;
+  }
+
+  footer {
+    width: 100%;
+    background-color: #202A6B;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    font-size: 14px;
+    flex-wrap: wrap; /* Se faltar espaço, quebra */
+    border-top: 2px solid rgb(255, 255, 255);
+  }
+  
+  footer a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+    color: #acacac;
+  }
+  
+  /* Botão de ajuda */
+.ajuda {
+    position: fixed;
+    top: 30px;
+    right: 20px;
+  }
+  
+  .ajuda button {
+    background-color: #202A6B;
+    color: white;
+    border: 2px solid white;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .ajuda button:hover{
+    background: #ffffff;
+    color: #000000;
+    border: 2px solid rgb(0, 0, 0);
+  }
+  
+  .modal {
+    display: none; 
+    position: fixed; 
+    z-index: 999; 
+    left: 0;
+    top: 0;
+    width: 100vw; 
+    height: 100vh;
+    background-color: rgba(0,0,0,0.7);
+  
+    display: flex;                /* Flex para centrar */
+    justify-content: center;      /* centro horizontal */
+    align-items: center;          /* centro vertical */
+    padding: 20px;                /* espaçamento nas bordas */
+    box-sizing: border-box;
+  }
+  
+  .modal-conteudo {
+    background-color: #202A6B;
+    color: white;
+    padding: 30px 40px;
+    border: 2px solid white;
+    width: auto;          /* deixa o tamanho automático */
+    max-width: 90vw;      /* até 90% da largura da tela */
+    max-height: 90vh;     /* até 90% da altura da tela */
+    overflow: visible;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    
+    font-weight: 400;
+    line-height: 1.6;
+  }
+  
+  .modal-conteudo h2, 
+  .modal-conteudo h3 {
+    margin: 0;
+    font-weight: 700;
+    color: #ffcc00;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+  
+  .modal-conteudo p, 
+  .modal-conteudo ul {
+    margin: 0;
+    padding: 0;
+    color: #e0e0e0;
+    font-size: 16px;
+    text-align: justify;
+  }
+  
+  .modal-conteudo ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  .modal-conteudo li {
+    margin-bottom: 8px;
+  }
+  
+  .modal-conteudo button {
+    align-self: center; /* centraliza o botão */
+    padding: 10px 30px;
+    background: #202A6B;
+    color: #ffffff;
+    border: 2px solid white;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: 20px;
+
+  }
+  
+  .modal-conteudo button:hover {
+    background: #ffffff;
+    color: #000000;
+    border: 2px solid rgb(0, 0, 0);
+  }
+  
+  .alerta-exame {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    font-size: 120px;
+    color: #ffcc00;
+    display: none;  /* começa escondido */
+    z-index: 10000;
+  
+    animation: piscar 0.6s ease-in-out infinite;
+    user-select: none;
+    pointer-events: none;
+  }
+  
+  @keyframes piscar {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  /* MEDIA QUERIES PARA RESPONSIVIDADE */
+
+@media (max-width: 768px) {
+
+    .titulo {
+        padding: 20px;
+        width: 90%;
+    }
+
+    .titulo h1 {
+        font-size: 28px;
+    }
+
+    .notas {
+        width: 90%;
+        padding: 20px;
+        position: static;
+        transform: none;
+        margin-top: 20px;
+    }
+
+    input {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .botoes {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .botoes button {
+        width: 100%;
+    }
+
+    .entradas, .resultados {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .ajuda {
+        top: 10px;
+        right: 10px;
+    }
+
+    .alerta-exame {
+        font-size: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .titulo h1 {
+        font-size: 24px;
+    }
+
+    .modal-conteudo {
+        padding: 20px;
+    }
+
+    .modal-conteudo p, 
+    .modal-conteudo ul {
+        font-size: 14px;
+    }
+
+    .ajuda button {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+
+    .alerta-exame {
+        font-size: 40px;
+    }
+}
