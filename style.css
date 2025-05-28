@@ -342,7 +342,7 @@
     .modal-conteudo {
       padding: 15px 20px;
       max-height: 80vh; /* reduz para deixar mais espaço */
-      overflow-y: auto; /* adiciona scroll vertical se necessário */
+      overflow-y: scroll; /* adiciona scroll vertical se necessário */
     }
   
     .modal-conteudo button {
