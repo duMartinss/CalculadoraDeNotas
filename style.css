@@ -265,11 +265,16 @@
 
   /* MEDIA QUERIES PARA RESPONSIVIDADE */
 
-@media (max-width: 768px) {
+  @media (max-width: 768px) {
+
+    body {
+        align-items: center; /* tira o center */
+      }
 
     .titulo {
         padding: 20px;
         width: 90%;
+        margin: 0 auto; /* centraliza */
     }
 
     .titulo h1 {
@@ -278,11 +283,16 @@
 
     .notas {
         width: 90%;
-        padding: 20px;
-        position: static;
+        max-width: 400px; /* controla largura máxima no celular */
+        margin: 20px auto;
+        position:static;
         transform: none;
-        margin-top: 20px;
-    }
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+    
 
     input {
         width: 100%;
@@ -343,10 +353,26 @@
       padding: 15px 20px;
       max-height: 80vh; /* reduz para deixar mais espaço */
       overflow-y: scroll; /* adiciona scroll vertical se necessário */
+      position:static;
     }
   
     .modal-conteudo button {
       margin-top: 10px;
       flex-shrink: 0; /* evita que o botão encolha */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .modal {
+      padding: 10px;       /* menos espaçamento nas bordas */
+      min-height: 100vh;   /* garante altura total */
+      overflow: auto;      /* permite rolar a modal se precisar */
+    }
+  
+    .modal-conteudo {
+      padding: 20px 15px;  /* padding menor pra caber melhor */
+      max-width: 95vw;     /* largura quase total da tela */
+      max-height: 75vh;    /* altura menor para caber no celular */
+      overflow-y: auto;    /* rolagem interna vertical se precisar */
     }
   }
